@@ -30,7 +30,7 @@ public class AjouterEmployeServlet extends HttpServlet {
         if (isAdded) {
             response.sendRedirect("employe.jsp");
         } else {
-            // Gérer l'erreur d'ajout
+
             request.setAttribute("errorMessage", "Échec de l'ajout de l'employé.");
             request.getRequestDispatcher("employe.jsp").forward(request, response);
         }

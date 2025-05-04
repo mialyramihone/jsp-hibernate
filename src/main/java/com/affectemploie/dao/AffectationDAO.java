@@ -206,8 +206,8 @@ public class AffectationDAO {
 
     public List<Map<String, String>> getAffectationsDetails() {
         List<Map<String, String>> affectationsDetails = new ArrayList<>();
-        
-        // Utilisez la requête SQL qui correspond à votre schéma de base de données
+
+
         String sql = "SELECT a.codeemp, e.nom, e.prenom, e.poste, " +
                      "a.codelieu, l.designation, l.province, a.date " +
                      "FROM affecter a " +
@@ -221,8 +221,8 @@ public class AffectationDAO {
 
             while (rs.next()) {
                 Map<String, String> affectationMap = new HashMap<>();
-                
-                // Détails de l'employé
+
+
                 affectationMap.put("code_employe", rs.getString("codeemp"));
                 affectationMap.put("nom", rs.getString("nom"));
                 affectationMap.put("prenoms", rs.getString("prenom")); // Note: "prenom" dans la requête mais "prenoms" dans la map
@@ -240,7 +240,7 @@ public class AffectationDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Vous pourriez logger cette erreur ou la relancer
+
         }
         
         return affectationsDetails;

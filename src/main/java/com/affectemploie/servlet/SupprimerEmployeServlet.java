@@ -29,14 +29,14 @@ public class SupprimerEmployeServlet extends HttpServlet {
         AffectationDAO affectationDAO = new AffectationDAO();
         
         try {
-            // 1. D'abord supprimer les affectations liées
+
             boolean affectationsDeleted = affectationDAO.deleteAffectationsByEmploye(codeEmploye);
             
             if (!affectationsDeleted) {
                 System.out.println("Aucune affectation trouvée pour l'employé " + codeEmploye);
             }
 
-            // 2. Puis supprimer l'employé
+
             boolean employeDeleted = employeDAO.supprimerEmploye(codeEmploye);
             
             if (employeDeleted) {

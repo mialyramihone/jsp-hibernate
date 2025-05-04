@@ -37,8 +37,8 @@ public class ModifierAffectationServlet extends HttpServlet {
         Affectation affectation = new Affectation(codeemp, codelieu, date);
         
         AffectationDAO affectationDAO = new AffectationDAO();
-        
-        // Vérification si l'affectation existe déjà (si les codes ont changé)
+
+
         if (!originalCodeemp.equals(codeemp) || !originalCodelieu.equals(codelieu)) {
             Affectation existingAffectation = affectationDAO.getAffectation(codeemp, codelieu);
             if (existingAffectation != null) {

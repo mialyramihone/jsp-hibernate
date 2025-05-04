@@ -259,7 +259,7 @@
 
          <div class="search-box mb-3">
             <div class="input-group">
-                <input type="text" id="searchInput" class="form-control" placeholder="Recherche">
+                <input type="text" id="searchInput" class="form-control" placeholder="Recherche...">
                 <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
@@ -313,7 +313,7 @@
 <div id="addLieuModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form action="ajouterLieuServlet" method="post">
+            <form id="addLieuForm"  action="ajouterLieuServlet" method="post">
                 <div class="modal-header bg-primary text-white">
                     <h4 class="modal-title">Nouveau Lieu</h4>
                     <button type="button" class="close text-white" data-dismiss="modal">&times;</button>
@@ -336,14 +336,35 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
                         <i class="fas fa-times"></i> Annuler
                     </button>
-                    <button type="submit" class="btn btn-success">
-                        <i class="fas fa-save"></i> Enregistrer
-                    </button>
+                    <button type="button" class="btn btn-success" id="confirmAddBtn">
+					    <i class="fas fa-save"></i> Enregistrer
+					</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-warning text-dark">
+        <h5 class="modal-title">Confirmation</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Voulez-vous vraiment ajouter cette information ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
+        <button type="button" class="btn btn-primary" id="confirmSubmitBtn">Oui</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Edit Lieu Modal -->
 <div id="editLieuModal" class="modal fade">
@@ -488,6 +509,15 @@
             $('#deleteLieuModal').modal('show');
         });
     });
+    
+    document.getElementById('confirmAddBtn').addEventListener('click', function() {
+        $('#confirmationModal').modal('show');
+    });
+
+    document.getElementById('confirmSubmitBtn').addEventListener('click', function() {
+        document.getElementById('addLieuForm').submit();
+    });
+    
 </script>
 </body>
 </html>

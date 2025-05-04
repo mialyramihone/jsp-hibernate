@@ -33,7 +33,7 @@ public class AjouterAffectationServlet extends HttpServlet {
                 throw new Exception("Tous les champs sont requis");
             }
 
-            // Vérifier si l'affectation existe déjà
+
             AffectationDAO dao = new AffectationDAO();
             if(dao.getAffectation(codeemp, codelieu) != null) {
                 throw new Exception("Cette affectation existe déjà");
