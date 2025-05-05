@@ -232,7 +232,7 @@
         <li><a href="employe.jsp"><i class="fas fa-users"></i> Employés</a></li>
         <li><a href="lieu.jsp" class="active"><i class="fas fa-map-marker-alt"></i> Lieux</a></li>
         <li><a href="affectation.jsp"><i class="fas fa-tasks"></i> Affectations</a></li>
-        <li><a href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+       <li><a href="confirmation-deconnexion.jsp"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
     </ul>
 </nav>
 

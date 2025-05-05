@@ -15,6 +15,12 @@ int nombreAffectations = affectationDAO.getNombreAffectations();
 // Récupérer les dernières affectations
 List<Map<String, String>> affectations = affectationDAO.getAffectationsDetails();
 %>
+<%
+    if (session.getAttribute("username") == null) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -266,7 +272,7 @@ List<Map<String, String>> affectations = affectationDAO.getAffectationsDetails()
         <li><a href="employe.jsp"><i class="fas fa-users"></i> Employés</a></li>
         <li><a href="lieu.jsp"><i class="fas fa-map-marker-alt"></i> Lieux</a></li>
         <li><a href="affectation.jsp"><i class="fas fa-tasks"></i> Affectations</a></li>
-        <li><a href="#"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
+		<li><a href="confirmation-deconnexion.jsp"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
     </ul>
 </nav>
 

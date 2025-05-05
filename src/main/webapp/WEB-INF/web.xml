@@ -8,6 +8,10 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
   <display-name>Archetype Created Web Application</display-name>
   
+  <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+  
    <servlet>
         <servlet-name>DashboardServlet</servlet-name>
         <servlet-class>com.affectemploie.servlets.DashboardServlet</servlet-class>
@@ -16,6 +20,24 @@
     <servlet-mapping>
         <servlet-name>DashboardServlet</servlet-name>
         <url-pattern>/dashboard</url-pattern>
+    </servlet-mapping>
+    
+      <servlet>
+        <servlet-name>SimpleLoginServlet</servlet-name>
+        <servlet-class>com.affectemploie.servlet.SimpleLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SimpleLoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.affectemploie.servlet.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     
 </web-app>
